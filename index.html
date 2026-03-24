@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SchooMy センサーモニター</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
+  :root {
+    --teal:#3AABA8;--orange:#E88A0A;--blue:#2E8EC4;--cream:#F5E4C4;
+    --dark:#0f1923;--panel:#162333;--border:rgba(58,171,168,0.25);
+    --text:#e8f4f4;--muted:#8ab4bf;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:#0f1923}
+  body{background:#0f1923 !important;color:#e8f4f4 !important;font-family:'Outfit',sans-serif;min-height:100vh;-webkit-text-fill-color:#e8f4f4}
+  body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(58,171,168,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(58,171,168,0.06) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+
+  header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);background:#0d1a28;backdrop-filter:blur(12px)}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{width:44px;height:44px;flex-shrink:0}
+  .logo-text{font-size:17px;font-weight:700;color:#3AABA8 !important;-webkit-text-fill-color:#3AABA8}
+  .logo-sub{font-size:10px;color:#8ab4bf !important;-webkit-text-fill-color:#8ab4bf;letter-spacing:.1em;text-transform:uppercase}
+  .demo-badge{background:rgba(232,138,10,0.2);border:1px solid rgba(232,138,10,0.5);color:#E88A0A !important;-webkit-text-fill-color:#E88A0A;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;animation:blink 2s infinite}
+  @geyframes blin{0%, 100%{opacity:1}50%{opacity:0.5}}
+  .status-dot{width:8px;height:8px;border-radius:50%;background:#8ab4bf;flex-shrink:0;transition:all .3s}
+  .status-dot.connected{background:#4cff91;box-shadow:0 0 8px #4cff91;animation:pulse 2s infinite}
+  .status-dot.connecting{background:#E88A0A;animation:pulse 0.8s infinite}
+  @keyframes pulse{0%, 100%{opacity:1}50%{opacity:0.4}}
